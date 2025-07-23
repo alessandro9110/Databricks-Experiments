@@ -1,0 +1,111 @@
+{
+  "datasets": [
+    {
+      "name": "0babbec2",
+      "displayName": "cleaned_accounts",
+      "queryLines": [
+        "SELECT * FROM training.retail_alessandro.cleaned_accounts"
+      ]
+    },
+    {
+      "name": "8845ba4a",
+      "displayName": "cleaned_opportunity",
+      "queryLines": [
+        "SELECT * FROM training.retail_alessandro.cleaned_opportunity"
+      ]
+    },
+    {
+      "name": "b9bbade2",
+      "displayName": "cleaned_user",
+      "queryLines": [
+        "SELECT * FROM training.retail_alessandro.cleaned_user"
+      ]
+    },
+    {
+      "name": "4666129c",
+      "displayName": "dim_country",
+      "queryLines": [
+        "SELECT * FROM training.retail_alessandro.dim_country"
+      ]
+    },
+    {
+      "name": "09126c42",
+      "displayName": "opportunity_history",
+      "queryLines": [
+        "SELECT * FROM training.retail_alessandro.opportunity_history"
+      ]
+    },
+    {
+      "name": "a24c374b",
+      "displayName": "employee_hierarchy",
+      "queryLines": [
+        "SELECT * FROM training.retail_alessandro.employee_hierarchy"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "659fec8c",
+      "displayName": "Untitled page",
+      "pageType": "PAGE_TYPE_CANVAS"
+    },
+    {
+      "name": "86e79153",
+      "displayName": "Global Filters",
+      "layout": [
+        {
+          "widget": {
+            "name": "b16ba307",
+            "queries": [
+              {
+                "name": "dashboards/01f06818017719c3973431e4aca9d588/datasets/01f0681839c916d5bd6ff9ec3ced2ac3_UserName",
+                "query": {
+                  "datasetName": "b9bbade2",
+                  "fields": [
+                    {
+                      "name": "UserName",
+                      "expression": "`UserName`"
+                    },
+                    {
+                      "name": "UserName_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "UserName",
+                    "displayName": "UserName",
+                    "queryName": "dashboards/01f06818017719c3973431e4aca9d588/datasets/01f0681839c916d5bd6ff9ec3ced2ac3_UserName"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_GLOBAL_FILTERS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    }
+  }
+}
