@@ -1,0 +1,1 @@
+This directory contains notebooks and scripts as exercises for multiple certifcations
