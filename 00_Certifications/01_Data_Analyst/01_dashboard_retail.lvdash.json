@@ -47,6 +47,33 @@
     {
       "name": "659fec8c",
       "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "de86f952",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "0babbec2",
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {}
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
       "pageType": "PAGE_TYPE_CANVAS"
     },
     {
@@ -77,7 +104,7 @@
             ],
             "spec": {
               "version": 2,
-              "widgetType": "filter-single-select",
+              "widgetType": "filter-multi-select",
               "encodings": {
                 "fields": [
                   {
@@ -88,13 +115,62 @@
                 ]
               },
               "frame": {
-                "showTitle": true
+                "showTitle": true,
+                "showDescription": false,
+                "title": "User Name"
               }
             }
           },
           "position": {
             "x": 0,
             "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "b86034b6",
+            "queries": [
+              {
+                "name": "dashboards/01f06818017719c3973431e4aca9d588/datasets/01f06818341e152cbc49db84820c1872_AccountName",
+                "query": {
+                  "datasetName": "0babbec2",
+                  "fields": [
+                    {
+                      "name": "AccountName",
+                      "expression": "`AccountName`"
+                    },
+                    {
+                      "name": "AccountName_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "AccountName",
+                    "displayName": "AccountName",
+                    "queryName": "dashboards/01f06818017719c3973431e4aca9d588/datasets/01f06818341e152cbc49db84820c1872_AccountName"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Account Name"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
             "width": 1,
             "height": 2
           }
