@@ -1,8 +1,230 @@
 {
+  "datasets": [
+    {
+      "name": "2353a3ca",
+      "displayName": "sales",
+      "queryLines": [
+        "SELECT * FROM main.simulatedretailcustomerdata.sales"
+      ]
+    },
+    {
+      "name": "9c27896d",
+      "displayName": "customers",
+      "queryLines": [
+        "SELECT * FROM main.simulatedretailcustomerdata.customers"
+      ]
+    },
+    {
+      "name": "e5865a80",
+      "displayName": "sales_orders",
+      "queryLines": [
+        "SELECT * FROM main.simulatedretailcustomerdata.sales_orders"
+      ]
+    }
+  ],
   "pages": [
     {
       "name": "52699fb8",
-      "displayName": "Untitled page",
+      "displayName": "Sales Report",
+      "layout": [
+        {
+          "widget": {
+            "name": "b907e006",
+            "queries": [
+              {
+                "name": "dashboards/01f071efd3111eeeb8f730078152cd3c/datasets/01f073e5ee8f12d1b3bd6eef7f91ac11_order_date",
+                "query": {
+                  "datasetName": "2353a3ca",
+                  "fields": [
+                    {
+                      "name": "order_date",
+                      "expression": "`order_date`"
+                    },
+                    {
+                      "name": "order_date_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-date-range-picker",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "order_date",
+                    "displayName": "order_date",
+                    "queryName": "dashboards/01f071efd3111eeeb8f730078152cd3c/datasets/01f073e5ee8f12d1b3bd6eef7f91ac11_order_date"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Order Date"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "d421635f",
+            "queries": [
+              {
+                "name": "dashboards/01f071efd3111eeeb8f730078152cd3c/datasets/01f073e5ef5118a8b49dc7dcc61b25fc_customer_name",
+                "query": {
+                  "datasetName": "9c27896d",
+                  "fields": [
+                    {
+                      "name": "customer_name",
+                      "expression": "`customer_name`"
+                    },
+                    {
+                      "name": "customer_name_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-multi-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "customer_name",
+                    "displayName": "customer_name",
+                    "queryName": "dashboards/01f071efd3111eeeb8f730078152cd3c/datasets/01f073e5ef5118a8b49dc7dcc61b25fc_customer_name"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Customer Name"
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 3,
+            "height": 1
+          }
+        },
+        {
+          "widget": {
+            "name": "3b0b6a43",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "2353a3ca",
+                  "fields": [
+                    {
+                      "name": "product_category",
+                      "expression": "`product_category`"
+                    },
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "product_category",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "product_category"
+                },
+                "y": {
+                  "fieldName": "count(*)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Count of Records"
+                },
+                "label": {
+                  "show": true
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "f4604cc0",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "2353a3ca",
+                  "fields": [
+                    {
+                      "name": "order_date",
+                      "expression": "`order_date`"
+                    },
+                    {
+                      "name": "sum(total_price)",
+                      "expression": "SUM(`total_price`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "line",
+              "encodings": {
+                "x": {
+                  "fieldName": "order_date",
+                  "scale": {
+                    "type": "temporal"
+                  },
+                  "displayName": "order_date"
+                },
+                "y": {
+                  "fieldName": "sum(total_price)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of total_price"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 1,
+            "width": 3,
+            "height": 6
+          }
+        }
+      ],
       "pageType": "PAGE_TYPE_CANVAS"
     }
   ],
