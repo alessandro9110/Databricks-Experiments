@@ -16,9 +16,3 @@ targets:
     mode: production
     workspace:
       host: https://adb-879327577164218.18.azuredatabricks.net
-
-  ## Optionally, there could be 'staging' or 'prod' targets here.
-  #
-  # prod:
-  #   workspace:
-  #     host: https://adb-879327577164218.18.azuredatabricks.net
