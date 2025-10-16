@@ -17,3 +17,5 @@ A cosa servono?
 2. Data augmentation
 3. Test e sviluppo
 4. Simulazione e ricerca
+
+
