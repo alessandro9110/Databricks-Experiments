@@ -1,0 +1,24 @@
+# This is a Databricks asset bundle definition for Synthia Data Agent.
+# The Databricks extension requires databricks.yml configuration file.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+
+bundle:
+  name: Synthia Data Agent
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-879327577164218.18.azuredatabricks.net
+  
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-879327577164218.18.azuredatabricks.net
+
+  ## Optionally, there could be 'staging' or 'prod' targets here.
+  #
+  # prod:
+  #   workspace:
+  #     host: https://adb-879327577164218.18.azuredatabricks.net
