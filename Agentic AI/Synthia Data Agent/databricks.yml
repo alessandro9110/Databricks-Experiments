@@ -5,6 +5,11 @@
 bundle:
   name: Synthia Data Agent
 
+# Add additional yml configurations
+include:
+  - "./resources/workflows.yml"
+
+
 targets:
   dev:
     mode: development
